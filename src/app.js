@@ -6,7 +6,6 @@ var movie = {
     characters: ["Frodo", "Bilbo"]
 }
 
-//JSX - Javascript XML
 var template = (
 <div>
     <h1>{movie.title}</h1>
@@ -35,6 +34,8 @@ var templateTwo = (
     </div>
 );
 
-var appRoot = document.getElementById('app');
+var appRoot1 = document.getElementById('app1');
+var appRoot2 = document.getElementById('app2');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template, appRoot1);
+ReactDOM.render(templateTwo, appRoot2);

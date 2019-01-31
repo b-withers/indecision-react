@@ -6,9 +6,9 @@ var movie = {
     title: "Lord of the Rings",
     genre: "Fantasy",
     characters: ["Frodo", "Bilbo"]
+};
 
-    //JSX - Javascript XML
-};var template = React.createElement(
+var template = React.createElement(
     "div",
     null,
     React.createElement(
@@ -62,6 +62,8 @@ var templateTwo = React.createElement(
     getLocation(user.location)
 );
 
-var appRoot = document.getElementById('app');
+var appRoot1 = document.getElementById('app1');
+var appRoot2 = document.getElementById('app2');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(template, appRoot1);
+ReactDOM.render(templateTwo, appRoot2);
