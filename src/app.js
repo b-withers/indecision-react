@@ -1,12 +1,12 @@
 console.log('app.js is running!');
 
-var movie = {
+const movie = {
     title: "Lord of the Rings",
     genre: "Fantasy",
     characters: ["Frodo", "Bilbo"]
 }
 
-var template = (
+const template = (
 <div>
     <h1>{movie.title}</h1>
     {movie.genre && <p>{movie.genre}</p>}
@@ -14,7 +14,7 @@ var template = (
 </div>
 );
 
-var user = {
+const user = {
     name: "Brady W",
     age: 39,
     location: "Home Office"
@@ -26,7 +26,7 @@ function getLocation(location) {
     } 
 };
 
-var templateTwo = (
+const templateTwo = (
     <div>
     <h1>{user.name ? user.name : 'No Username'}</h1>
     {(user.age >= 18) && <p>Age: {user.age}</p>}
@@ -34,8 +34,8 @@ var templateTwo = (
     </div>
 );
 
-var appRoot1 = document.getElementById('app1');
-var appRoot2 = document.getElementById('app2');
+const appRoot1 = document.getElementById('app1');
+const appRoot2 = document.getElementById('app2');
 
 ReactDOM.render(template, appRoot1);
 ReactDOM.render(templateTwo, appRoot2);
