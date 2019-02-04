@@ -2,68 +2,57 @@
 
 console.log('app.js is running!');
 
-var movie = {
-    title: "Lord of the Rings",
-    genre: "Fantasy",
-    characters: ["Frodo", "Bilbo"]
+var count = 0;
+var addOne = function addOne() {
+    console.log("addOne");
 };
 
-var template = React.createElement(
-    "div",
-    null,
-    React.createElement(
-        "h1",
-        null,
-        movie.title
-    ),
-    movie.genre && React.createElement(
-        "p",
-        null,
-        movie.genre
-    ),
-    React.createElement(
-        "p",
-        null,
-        movie.characters.length > 1 ? 'There are more than one Character' : 'There is only one Character'
-    )
-);
-
-var user = {
-    name: "Brady W",
-    age: 39,
-    location: "Home Office"
+var minusOne = function minusOne() {
+    console.log("minusOne");
 };
 
-function getLocation(location) {
-    if (location) {
-        return React.createElement(
-            "p",
-            null,
-            "Location: ",
-            location
-        );
-    }
+var reset = function reset() {
+    console.log("reset");
 };
-
 var templateTwo = React.createElement(
     "div",
     null,
     React.createElement(
         "h1",
         null,
-        user.name ? user.name : 'No Username'
+        "Count: ",
+        count
     ),
-    user.age >= 18 && React.createElement(
+    React.createElement(
         "p",
         null,
-        "Age: ",
-        user.age
+        React.createElement(
+            "button",
+            { onClick: addOne },
+            "+1"
+        )
     ),
-    getLocation(user.location)
+    React.createElement(
+        "p",
+        null,
+        React.createElement(
+            "button",
+            { onClick: minusOne },
+            "-1"
+        )
+    ),
+    React.createElement(
+        "p",
+        null,
+        React.createElement(
+            "button",
+            { onClick: reset },
+            "reset"
+        )
+    )
 );
 
-var appRoot1 = document.getElementById('app1');
-var appRoot2 = document.getElementById('app2');
+console.log(templateTwo);
+var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot1);
-ReactDOM.render(templateTwo, appRoot2);
+ReactDOM.render(templateTwo, appRoot);

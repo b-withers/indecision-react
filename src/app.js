@@ -1,41 +1,30 @@
 console.log('app.js is running!');
 
-const movie = {
-    title: "Lord of the Rings",
-    genre: "Fantasy",
-    characters: ["Frodo", "Bilbo"]
+
+
+let count = 0;
+const addOne = () => {
+    console.log("addOne");
 }
 
-const template = (
-<div>
-    <h1>{movie.title}</h1>
-    {movie.genre && <p>{movie.genre}</p>}
-    <p>{movie.characters.length > 1 ? 'There are more than one Character' :  'There is only one Character'}</p>
-</div>
-);
-
-const user = {
-    name: "Brady W",
-    age: 39,
-    location: "Home Office"
+const minusOne = () => {
+    console.log("minusOne");
 }
 
-function getLocation(location) {
-    if (location) {
-        return <p>Location: {location}</p>;
-    } 
-};
-
+const reset = () => {
+    console.log("reset");
+}
 const templateTwo = (
     <div>
-    <h1>{user.name ? user.name : 'No Username'}</h1>
-    {(user.age >= 18) && <p>Age: {user.age}</p>}
-    {getLocation(user.location)}
+        <h1>Count: {count}</h1>
+        <p><button onClick={addOne}>+1</button></p>
+        <p><button onClick={minusOne}>-1</button></p>
+        <p><button onClick={reset}>reset</button></p>
     </div>
 );
 
-const appRoot1 = document.getElementById('app1');
-const appRoot2 = document.getElementById('app2');
 
-ReactDOM.render(template, appRoot1);
-ReactDOM.render(templateTwo, appRoot2);
+console.log(templateTwo);
+const appRoot = document.getElementById('app');
+
+ReactDOM.render(templateTwo, appRoot);
