@@ -1,11 +1,12 @@
 console.log('app.js is running!');
 
 const app = {
-    title: 'indecision App',
-    subtitle: 'Put your life in the hands of a computer',
+    title: 'indecision app',
+    subtitle: 'When you can decide what to eat, watch, do, clean, anything... Let me decide!',
     options: []
 };
 
+//adds item from the input to the array
 const onFormSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
@@ -19,11 +20,13 @@ const onFormSubmit = (e) => {
     }
 };
 
+//empties array
 const reset = () => {
     app.options = [];
     renderApp();
 };
 
+//generates / picks the random item from the array
 const onMakeDecision = () =>{
     const randomNum = Math.floor(Math.random() * app.options.length);
     const option = app.options[randomNum];
@@ -39,8 +42,8 @@ const renderApp = () => {
             <h1>{app.title}</h1>
             {app.subtitle && <p>{app.subtitle}</p>}
             <p>{app.options.length > 0 ? "Here are your options" : "No options"}</p>
-            <button disabled={app.options.length < 2} onClick={onMakeDecision}>Pick for me!</button>
-            <button onClick={reset}>remove all</button>
+            <p><button disabled={app.options.length < 2} onClick={onMakeDecision}>Pick for me!</button></p>
+            <p><button onClick={reset}>remove all</button></p>
             <ol>
             {
                 app.options.map((items) => {

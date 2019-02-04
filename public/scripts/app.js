@@ -3,11 +3,12 @@
 console.log('app.js is running!');
 
 var app = {
-    title: 'indecision App',
-    subtitle: 'Put your life in the hands of a computer',
+    title: 'indecision app',
+    subtitle: 'When you can decide what to eat, watch, do, clean, anything... Let me decide!',
     options: []
 };
 
+//adds item from the input to the array
 var onFormSubmit = function onFormSubmit(e) {
     e.preventDefault();
     console.log("form submitted");
@@ -21,11 +22,13 @@ var onFormSubmit = function onFormSubmit(e) {
     }
 };
 
+//empties array
 var reset = function reset() {
     app.options = [];
     renderApp();
 };
 
+//generates / picks the random item from the array
 var onMakeDecision = function onMakeDecision() {
     var randomNum = Math.floor(Math.random() * app.options.length);
     var option = app.options[randomNum];
@@ -54,14 +57,22 @@ var renderApp = function renderApp() {
             app.options.length > 0 ? "Here are your options" : "No options"
         ),
         React.createElement(
-            'button',
-            { disabled: app.options.length < 2, onClick: onMakeDecision },
-            'Pick for me!'
+            'p',
+            null,
+            React.createElement(
+                'button',
+                { disabled: app.options.length < 2, onClick: onMakeDecision },
+                'Pick for me!'
+            )
         ),
         React.createElement(
-            'button',
-            { onClick: reset },
-            'remove all'
+            'p',
+            null,
+            React.createElement(
+                'button',
+                { onClick: reset },
+                'remove all'
+            )
         ),
         React.createElement(
             'ol',
