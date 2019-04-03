@@ -8,34 +8,48 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Counter = function (_React$Component) {
-    _inherits(Counter, _React$Component);
+var Visibility = function (_React$Component) {
+  _inherits(Visibility, _React$Component);
 
-    function Counter() {
-        _classCallCheck(this, Counter);
+  function Visibility() {
+    _classCallCheck(this, Visibility);
 
-        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Visibility.__proto__ || Object.getPrototypeOf(Visibility)).apply(this, arguments));
+  }
+
+  _createClass(Visibility, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'h1',
+          null,
+          'Visibility Toggle'
+        ),
+        React.createElement(
+          'button',
+          { onClick: toggleVisibility },
+          visibility ? 'Hide details' : 'Show details'
+        ),
+        visibility && React.createElement(
+          'div',
+          null,
+          React.createElement(
+            'p',
+            null,
+            'Hey. These are some details you can now see!'
+          )
+        )
+      );
     }
+  }]);
 
-    _createClass(Counter, [{
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'h1',
-                    null,
-                    'Visibility Toggle'
-                )
-            );
-        }
-    }]);
-
-    return Counter;
+  return Visibility;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(Visibility, null), document.getElementById('app'));
 
 // let visibility = false;
 
@@ -45,19 +59,19 @@ ReactDOM.render(React.createElement(Counter, null), document.getElementById('app
 // };
 
 // const render = () => {
-//   const jsx = (
-//     <div>
-//       <h1>Visibility Toggle</h1>
-//       <button onClick={toggleVisibility}>
-//         {visibility ? 'Hide details' : 'Show details'}
-//       </button>
-//       {visibility && (
-//         <div>
-//           <p>Hey. These are some details you can now see!</p>
-//         </div>
-//       )}
-//     </div>
-//   );
+// const jsx = (
+//   <div>
+//     <h1>Visibility Toggle</h1>
+//     <button onClick={toggleVisibility}>
+//       {visibility ? 'Hide details' : 'Show details'}
+//     </button>
+//     {visibility && (
+//       <div>
+//         <p>Hey. These are some details you can now see!</p>
+//       </div>
+//     )}
+//   </div>
+// );
 
 //   ReactDOM.render(jsx, document.getElementById('app'));
 // };

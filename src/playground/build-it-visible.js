@@ -1,15 +1,23 @@
-class Counter extends React.Component {
+class Visibility extends React.Component {
   
   render(){
-      return (
+    return (
+      <div>
+        <h1>Visibility Toggle</h1>
+        <button onClick={toggleVisibility}>
+          {visibility ? 'Hide details' : 'Show details'}
+        </button>
+        {visibility && (
           <div>
-          <h1>Visibility Toggle</h1>
+            <p>Hey. These are some details you can now see!</p>
           </div>
-      )
+        )}
+      </div>
+    );
   }
 }
 
-ReactDOM.render(<Counter />, document.getElementById('app'));
+ReactDOM.render(<Visibility />, document.getElementById('app'));
 
 
 
@@ -21,19 +29,19 @@ ReactDOM.render(<Counter />, document.getElementById('app'));
 // };
 
 // const render = () => {
-//   const jsx = (
-//     <div>
-//       <h1>Visibility Toggle</h1>
-//       <button onClick={toggleVisibility}>
-//         {visibility ? 'Hide details' : 'Show details'}
-//       </button>
-//       {visibility && (
-//         <div>
-//           <p>Hey. These are some details you can now see!</p>
-//         </div>
-//       )}
-//     </div>
-//   );
+  // const jsx = (
+  //   <div>
+  //     <h1>Visibility Toggle</h1>
+  //     <button onClick={toggleVisibility}>
+  //       {visibility ? 'Hide details' : 'Show details'}
+  //     </button>
+  //     {visibility && (
+  //       <div>
+  //         <p>Hey. These are some details you can now see!</p>
+  //       </div>
+  //     )}
+  //   </div>
+  // );
 
 //   ReactDOM.render(jsx, document.getElementById('app'));
 // };
