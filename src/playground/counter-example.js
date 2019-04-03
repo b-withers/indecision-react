@@ -1,33 +1,67 @@
-let count = 0;
+class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleAddOne = this.handleAddOne.bind(this);
+        this.handleMinusOne = this.handleMinusOne.bind(this);
+        this.handleReset = this.handleReset.bind(this);
+    }
+    handleAddOne(){
+        console.log('handleAddOne');
+    }
+    handleMinusOne(){
+        console.log('handleMinusOne');
+    }
+    handleReset(){
+        console.log('handleReset');
+    }
+    render(){
+        return (
+            <div>
+            <h1>Count: </h1>
+            <button onClick={this.handleAddOne}>+1</button>
+            <button onClick={this.handleMinusOne}>-1</button>
+            <button onClick={this.handleReset}>reset</button>
+            </div>
+        )
+    }
+}
 
-const addOne = () => {
-    count ++;
-    renderCounterApp();
-};
-
-const minusOne = () => {
-    count --;
-    renderCounterApp();
-};
-
-const reset = () => {
-    count = 0;
-    renderCounterApp();
-};
 
 
 
-const renderCounterApp = () => {
-    const templateTwo = (
-        <div>
-            <h1>Count: {count}</h1>
-            <p><button onClick={addOne}>+1</button></p>
-            <p><button onClick={minusOne}>-1</button></p>
-            <p><button onClick={reset}>reset</button></p>
-        </div>
-    );
 
-    ReactDOM.render(templateTwo, appRoot);
-};
+ReactDOM.render(<Counter />, document.getElementById('app'));
 
-renderCounterApp();
+// let count = 0;
+
+// const addOne = () => {
+//     count ++;
+//     renderCounterApp();
+// };
+
+// const minusOne = () => {
+//     count --;
+//     renderCounterApp();
+// };
+
+// const reset = () => {
+//     count = 0;
+//     renderCounterApp();
+// };
+
+
+
+// const renderCounterApp = () => {
+//     const templateTwo = (
+//         <div>
+//             <h1>Count: {count}</h1>
+//             <p><button onClick={addOne}>+1</button></p>
+//             <p><button onClick={minusOne}>-1</button></p>
+//             <p><button onClick={reset}>reset</button></p>
+//         </div>
+//     );
+
+//     ReactDOM.render(templateTwo, appRoot);
+// };
+
+// renderCounterApp();
