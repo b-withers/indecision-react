@@ -11,51 +11,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Counter = function (_React$Component) {
     _inherits(Counter, _React$Component);
 
-    function Counter(props) {
+    function Counter() {
         _classCallCheck(this, Counter);
 
-        var _this = _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).call(this, props));
-
-        _this.handleAddOne = _this.handleAddOne.bind(_this);
-        _this.handleMinusOne = _this.handleMinusOne.bind(_this);
-        _this.handleReset = _this.handleReset.bind(_this);
-        _this.state = {
-            count: 0
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
     }
 
     _createClass(Counter, [{
-        key: 'handleAddOne',
-        value: function handleAddOne() {
-            console.log('handleAddOne');
-            this.setState(function (prevState) {
-                return {
-                    count: prevState.count + 1
-                };
-            });
-        }
-    }, {
-        key: 'handleMinusOne',
-        value: function handleMinusOne() {
-            console.log('handleMinusOne');
-            this.setState(function (prevState) {
-                return {
-                    count: prevState.count - 1
-                };
-            });
-        }
-    }, {
-        key: 'handleReset',
-        value: function handleReset() {
-            console.log('handleReset');
-            this.setState(function () {
-                return {
-                    count: 0
-                };
-            });
-        }
-    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -64,24 +26,7 @@ var Counter = function (_React$Component) {
                 React.createElement(
                     'h1',
                     null,
-                    'Count: ',
-                    this.state.count,
-                    ' '
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleAddOne },
-                    '+1'
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleMinusOne },
-                    '-1'
-                ),
-                React.createElement(
-                    'button',
-                    { onClick: this.handleReset },
-                    'reset'
+                    'Visibility Toggle'
                 )
             );
         }
@@ -92,35 +37,29 @@ var Counter = function (_React$Component) {
 
 ReactDOM.render(React.createElement(Counter, null), document.getElementById('app'));
 
-// let count = 0;
+// let visibility = false;
 
-// const addOne = () => {
-//     count ++;
-//     renderCounterApp();
+// const toggleVisibility = () => {
+//   visibility = !visibility;
+//   render();
 // };
 
-// const minusOne = () => {
-//     count --;
-//     renderCounterApp();
-// };
-
-// const reset = () => {
-//     count = 0;
-//     renderCounterApp();
-// };
-
-
-// const renderCounterApp = () => {
-//     const templateTwo = (
+// const render = () => {
+//   const jsx = (
+//     <div>
+//       <h1>Visibility Toggle</h1>
+//       <button onClick={toggleVisibility}>
+//         {visibility ? 'Hide details' : 'Show details'}
+//       </button>
+//       {visibility && (
 //         <div>
-//             <h1>Count: {count}</h1>
-//             <p><button onClick={addOne}>+1</button></p>
-//             <p><button onClick={minusOne}>-1</button></p>
-//             <p><button onClick={reset}>reset</button></p>
+//           <p>Hey. These are some details you can now see!</p>
 //         </div>
-//     );
+//       )}
+//     </div>
+//   );
 
-//     ReactDOM.render(templateTwo, appRoot);
+//   ReactDOM.render(jsx, document.getElementById('app'));
 // };
 
-// renderCounterApp();
+// render();
